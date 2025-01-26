@@ -186,6 +186,18 @@
                 console.log('Autoplay tidak berhasil:', error);
             });
         };
+
+        let ticking = false;
+
+window.addEventListener('scroll', function() {
+    if (!ticking) {
+        window.requestAnimationFrame(function() {
+            // Kode untuk efek scroll
+            ticking = false;
+        });
+        ticking = true;
+    }
+});
     </script>
 </body>
 </html>
