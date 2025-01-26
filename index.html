@@ -9,21 +9,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+  />
     <style>
         html, body {
-            height: 100%;
-            margin: 0;
-            overflow-x: hidden;
+            height: 100%; /* Pastikan html dan body memiliki tinggi 100% */
+            margin: 0; /* Hapus margin default */
+            overflow-x: hidden; /* Menghindari scrollbar horizontal */
             scroll-behavior: smooth !important;
         }
 
         body {
             background-image: url('DSC_0655.jpg');
-            background-attachment: fixed;
+            /* backdrop-filter: blur(1px) !important; */
+            background-attachment: fixed; /* Latar belakang tetap saat menggulir */
             background-position: center;
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: cover; /* Pastikan gambar menutupi seluruh area */
         }
 
         .info-container, .info-box {
@@ -32,21 +36,41 @@
         }
 
         .info-container {
-            height: auto; 
+            height: auto; /* Hapus tinggi tetap untuk responsivitas */
         }
 
         #butt {
-            position: fixed; 
-            right: 20px; 
-            bottom: 20px; 
-            z-index: 1000; 
-            display: none !important;
-        }
+        position: fixed; /* Menetapkan tombol tetap di tempat */
+        right: 20px; /* Jarak dari sisi kanan */
+        bottom: 20px; /* Jarak dari bagian bawah */
+        z-index: 1000; /* Pastikan tombol ada di atas elemen lain */
+        display: none !important;
+    }
 
+
+        /* Responsif */
         @media (max-width: 600px) {
             .container {
                 flex-direction: column;
                 align-items: center;
+            }
+
+            .image-container {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            #info-map {
+                margin-top: 20px; /* Tambahkan margin atas untuk info-map */
+            }
+
+            .info-box {
+                width: 100%; /* Atur lebar info-box */
+                margin: 0 auto; /* Pusatkan info-box */
             }
 
             .box-judul h1 {
@@ -54,12 +78,24 @@
                 display: flex !important;
             }
 
-            #butt {
-                right: 10px; 
-                bottom: 50px; 
-                display: flex !important;
-                opacity: 0.9 !important;
+            #font-info-tengah {
+                font-size: 14px !important;
             }
+
+            #informasi-acara {
+                font-size: 1em !important;
+            }
+
+            strong {
+                font-size: 13px !important;
+            }
+
+            #butt {
+            right: 10px; /* Jarak lebih kecil untuk tampilan mobile */
+            bottom: 50px; /* Jarak lebih kecil dari bawah */
+            display: flex !important;
+            opacity: 0.9 !important;
+        }
         }
     </style>
 </head>
@@ -70,7 +106,7 @@
 
     <div class="container" style="padding-top: 25px;">
         <div class="box-judul" style="display: flex; justify-content: center; align-items: center; width: 100%;">
-            <h1 class="text-center" style=" backdrop-filter: blur(14px); text-transform: uppercase; padding: 10px; border-radius: 6px; color: #f4c530; font-weight: 700; margin-bottom: 20px; font-size: 3vw;">
+            <h1 class="text-center" style=" backdrop-filter: blur(14px); text-transform: uppercase; padding-top: 8px; padding-right: 20px; padding-left: 20px; padding-bottom: 10px; border-radius: 6px; color: #f4c530; font-weight: 700; margin-bottom: 20px; margin-top: -10px;  font-size: 3vw;">
                 Jamuan Berkah Bahagia
             </h1>
         </div>
@@ -115,12 +151,12 @@
                         Mewujudkan kehendak Hati Laomu dan Buddha Maitreya
                         Mewujudkan Dunia Satu Keluarga
                         Menghapus Derita dan Nestapa di Dunia
-
+                        
                         Kami nantikan kehadiran Gewei jiaren <br><br>
-
+                        
                         <b style="color: #f4c530;">謝謝各位家人慈悲.</b></h6>
 
-                    <hr style="border-radius: 5px;  border-color: #f4c530; border-style: solid; border-width: 5px;">
+                            <hr style="border-radius: 5px;  border-color: #f4c530; border-style: solid; border-width: 5px;">
                             
                     <div class="address" id="map">
                         <div class="map-container mt-5">
@@ -132,26 +168,23 @@
             </div>
         </div>
         <div class="button animate__fadeInRight" id="butt">
-            <a href="#map"><button type="button" class="btn" style="color: white; font-weight: 700; font-family: 'Poppins', sans-serif; background-color: #f4c530;">ALAMAT</button></a>
+            <a href="#map"><button type="button" class="btn" style="color: white;  font-weight: 700;  font-family: 'Poppins', sans-serif; background-color: #f4c530;">ALAMAT</button></a>
         </div>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        var audio = document.getElementById('audio');
-        let audioStarted = false;
-
-        window.onscroll = function() {
-            if (!audioStarted) {
-                audio.play().then(() => {
-                    audioStarted = true; // Pastikan audio dimulai hanya sekali
-                    audio.muted = false; // Hapus mute setelah audio mulai diputar
-                }).catch(error => {
-                    console.log('Autoplay tidak berhasil:', error);
-                });
-            }
+        window.onload = function() {
+            var audio = document.getElementById('audio');
+            audio.muted = true; // Memastikan audio dimatikan saat dimulai
+            audio.play().then(() => {
+                audio.muted = false; // Menghapus mute setelah audio mulai diputar
+            }).catch(error => {
+                console.log('Autoplay tidak berhasil:', error);
+            });
         };
     </script>
 </body>
