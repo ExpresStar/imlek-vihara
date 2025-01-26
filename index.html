@@ -18,6 +18,7 @@
             height: 100%; /* Pastikan html dan body memiliki tinggi 100% */
             margin: 0; /* Hapus margin default */
             overflow-x: hidden; /* Menghindari scrollbar horizontal */
+            scroll-behavior: smooth !important;
         }
 
         body {
@@ -37,6 +38,15 @@
         .info-container {
             height: auto; /* Hapus tinggi tetap untuk responsivitas */
         }
+
+        #butt {
+        position: fixed; /* Menetapkan tombol tetap di tempat */
+        right: 20px; /* Jarak dari sisi kanan */
+        bottom: 20px; /* Jarak dari bagian bawah */
+        z-index: 1000; /* Pastikan tombol ada di atas elemen lain */
+        display: none !important;
+    }
+
 
         /* Responsif */
         @media (max-width: 600px) {
@@ -59,18 +69,33 @@
             }
 
             .info-box {
-                width: 90%; /* Atur lebar info-box */
+                width: 100%; /* Atur lebar info-box */
                 margin: 0 auto; /* Pusatkan info-box */
             }
 
             .box-judul h1 {
-                font-size: 1em !important;
+                font-size: 1.4em !important;
                 display: flex !important;
             }
 
             #font-info-tengah {
                 font-size: 14px !important;
             }
+
+            #informasi-acara {
+                font-size: 1em !important;
+            }
+
+            strong {
+                font-size: 13px !important;
+            }
+
+            #butt {
+            right: 10px; /* Jarak lebih kecil untuk tampilan mobile */
+            bottom: 50px; /* Jarak lebih kecil dari bawah */
+            display: flex !important;
+            opacity: 0.9 !important;
+        }
         }
     </style>
 </head>
@@ -108,10 +133,10 @@
                 <!-- Kotak Info di bawah Carousel -->
                 <div class="box-judul animate__fadeInUp">
                     <div class="info-box mt-3" style="border: solid 4px #f4c530; width: 80%; border-radius: 6px; padding: 15px; font-family: 'Poppins'; background-color: rgba(181, 181, 181, 0.432);">
-                        <h2 style="color: #f4c530; font-weight: 700;">INFORMASI ACARA</h2>
-                        <p><strong style="font-size: 15px;">Tanggal: 29 Januari 2025</strong></p>
-                        <p><strong style="font-size: 15px;">Waktu: 10:00 WIB S.d Selesai</strong></p>
-                        <p><strong style="font-size: 15px;">Tempat: Vihara Kumala Maitreya</strong></p>
+                        <h2 id="informasi-acara" style=" text-align: center; color: #f4c530; font-weight: 700; font-size: 18px;">Kami mengundang Gewei Tz dan para Tokoh Masyarakat, dalam acara:</h2>
+                        <p class="p" style="color: white;"><strong style="font-size: 15px;">Tanggal: 29 Januari 2025</strong></p>
+                        <p class="p" style="color: white;"><strong style="font-size: 15px;">Waktu: 10:00 WIB S.d Selesai</strong></p>
+                        <p class="p" style="color: white;"><strong style="font-size: 15px;">Tempat: Vihara Kumala Maitreya</strong></p>
                     </div>
                 </div>
             </div>
@@ -126,23 +151,27 @@
                         Mewujudkan kehendak Hati Laomu dan Buddha Maitreya
                         Mewujudkan Dunia Satu Keluarga
                         Menghapus Derita dan Nestapa di Dunia
-                        <br><br>
+                        
                         Kami nantikan kehadiran Gewei jiaren <br><br>
                         
                         <b style="color: #f4c530;">謝謝各位家人慈悲.</b></h6>
 
                             <hr style="border-radius: 5px;  border-color: #f4c530; border-style: solid; border-width: 5px;">
                             
-                    <div class="address">
+                    <div class="address" id="map">
                         <div class="map-container mt-5">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.004650513537!2d104.55856647349603!3d-0.4979495352695432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e271be372ca4667%3A0x44da516f48bac368!2sVihara%20Kumala%20Maitreya!5e1!3m2!1sid!2sid!4v1737825057324!5m2!1sid!2sid" 
-                            width="80%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            width="80%" height="150" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="button animate__fadeInRight" id="butt">
+            <a href="#map"><button type="button" class="btn" style="color: white;  font-weight: 700;  font-family: 'Poppins', sans-serif; background-color: #f4c530;">ALAMAT</button></a>
+        </div>
     </div>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
